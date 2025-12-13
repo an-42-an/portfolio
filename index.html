@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Ananya's Portfolio</title>
+<style>
+    .flex {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+     .gray1 > * {
+        color: rgba(70, 69, 69, 0.796);
+        width: max-content;
+        font-size: larger;
+        text-decoration: none;
+
+        background-image: linear-gradient(currentColor, currentColor);
+        background-size: 0% 2px;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+
+        transition: color 0.2s ease, background-size 0.2s ease;
+    }
+    .nav {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: none;
+        margin-left: auto;
+    }
+
+    @media (max-width: 800px) {
+        .nav {
+            display: none;
+        }
+
+        .menu-btn {
+            font-size: 25px;
+            /*padding: 10px;*/
+            border-radius: 8px;
+            border:0.5px solid rgba(195, 193, 193, 0.841);
+            display:block;
+        }
+
+    }
+    .menu{
+        display:none;
+        position:absolute;
+        top:9vh;
+        right:20px;
+        background:#fff;
+        border-radius:10px;
+        box-shadow:0 8px 30px rgba(0,0,0,.15);
+        padding:10px 0;
+        min-width:160px;
+    }
+
+    .menu label{
+        display:block;
+        width:100%;
+        box-sizing:border-box;
+        padding:12px 20px;
+        cursor:pointer;
+        color:#444;
+        transition:background .2s,color .2s;
+    }
+
+    .menu label:hover{
+        background:#f0f0f0;
+        color:#000;
+    }
+
+    .container{
+        display:flex; align-items: center;margin-top:50px; 
+        max-width:95vw;justify-content: center;
+    }
+    .gray1 > *:hover {
+        color: black;
+        background-size: 100% 2px;
+    }
+
+    .target{
+        scroll-margin-top: 10vh;
+    }
+    div{
+        vertical-align: middle;
+    }
+</style>
+<script>
+function toggleMenu() {
+  const m = document.getElementById("menu");
+  m.style.display = m.style.display === "block" ? "none" : "block";
+}
+window.addEventListener("resize", () => {
+  menu.style.display = "none";
+});
+</script>
+</head>
+<body>
+    <div style="position:fixed; top:0; height:9vh; left:0; right:0;background-color: #faf8f8d0;
+     border-bottom:1px solid rgba(195, 193, 193, 0.841);"  class="flex">
+        <h2 style="flex: 1 1 30%; text-align:left;color:rgba(0, 0, 0, 0.814); ">Ananya's Portfolio</h2>
+        <div style="flex: 1 1 40%; justify-content: right; margin-left:auto" class="flex gray1 nav">
+            <label onclick="location.href='#about'">About</label>
+            <label onclick="location.href='#skills'">Skills</label>
+            <label onclick="location.href='#projects'">Projects</label>
+            <label onclick="location.href='#contact'">Contact</label>
+        </div>
+        <button class="menu-btn" onclick="toggleMenu()" >☰</button>
+        <div id="menu" class="menu">
+            <label onclick="location.href='#about'">About</label>
+            <label onclick="location.href='#skills'">Skills</label>
+            <label onclick="location.href='#projects'">Projects</label>
+            <label onclick="location.href='#contact'">Contact</label>
+        </div>
+    </div>
+    <div class="container" style="margin-top:150px">
+        <div style="border-radius: 30px; padding:20px;  
+            text-align: center;justify-content: center; font-size:larger;
+            background-color: rgba(214, 211, 211, 0.656); display:flex; align-items: center;">
+            Welcome to my Portfolio
+        </div>
+    </div>
+    <div class="container">
+        <div style="text-align: center;justify-content: center; font-size:10vh; display:flex; align-items: center;">
+            Full-Stack Developer
+        </div>
+    </div>
+    <div class="container">
+        <div style="color:rgb(217, 131, 10);
+            text-align: center;justify-content: center; font-size:10vh; display:flex; align-items: center;">
+            & Problem-Solver
+        </div>
+    </div>
+    <div class="container">
+        <div style="color: rgba(88, 87, 87, 0.827);text-align: center;justify-content: center; 
+            font-size:3.5vh; display:flex; align-items: center; max-width:1200px;">
+            I build clean, efficient software with a strong focus on logic, performance, and simplicity. 
+            I enjoy turning complex problems into reliable systems and learning deeply how things work under the hood.
+        </div>
+    </div>
+
+    <div class="flex container" >
+        <label style="height:70px;   color: white ; background-color:rgb(228, 139, 13) ;
+            text-align: center;justify-content: center; border-radius:40px; padding-left:20px;padding-right:20px;
+            font-size:3vh; display:flex; align-items: center;">
+            View my work
+        </label>
+        <label style="height:70px;  color: black ; border: 1px solid rgba(195, 193, 193, 0.841) ;
+            text-align: center;justify-content: center; border-radius:40px; padding-left:25px;padding-right:25px;
+            font-size:3vh; display:flex; align-items: center;">
+            Get in touch
+        </label>
+    </div>
+    
+    <h2 id="about" class="target" style="margin-top:10vh;color:rgb(217, 131, 10)">About</h2>
+    <div id="skills" class="target" style="margin-top:60vh;color:blue">skills</div>
+    <div id="projects" class="target" style="margin-top:110vh;color:blue">projects</div>
+    <div id="contact" class="target" style="margin-top:160vh;color:blue">contact</div>
+    <!--div id="target-section" style="margin-top: 8%;color:blue; z-index:10">
+        regular
+    </div-->
+    <!--margin-left: auto;-->
+</body>
