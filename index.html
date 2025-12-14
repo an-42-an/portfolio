@@ -4,6 +4,9 @@
 <meta charset="UTF-8" />
 <title>Ananya's Portfolio</title>
 <style>
+    html{
+        font-family:'Inter',system-ui,sans-serif;
+    }
     .flex {
         display: flex;
         flex-wrap: wrap;
@@ -50,13 +53,10 @@
     }
     .menu{
         display:none;
-        position:absolute;
-        top:9vh;
-        right:20px;
         background:#fff;
         border-radius:10px;
         box-shadow:0 8px 30px rgba(0,0,0,.15);
-        padding:10px 0;
+        padding:10px;
         min-width:160px;
     }
 
@@ -77,7 +77,8 @@
 
     .container{
         display:flex; align-items: center;margin-top:50px; 
-        max-width:95vw;justify-content: center;
+        padding-left: 20px;padding-right: 20px;
+        max-width:99vw;justify-content: center;
     }
     .gray1 > *:hover {
         color: black;
@@ -85,25 +86,85 @@
     }
 
     .target{
-        scroll-margin-top: 10vh;
+        scroll-margin-top: 30vh;
     }
     div{
         vertical-align: middle;
     }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .card{
+        box-shadow: 0 4px 8px 0  #9f9f9f;
+        border-radius:10px;
+        background-color:#ffffff00;
+        padding:20px;
+        font-size:3vh;
+        width:300px;
+        max-width:400px;
+        margin: 20px;
+    }
+    .img{
+        box-shadow: 0 4px 8px 0  #9f9f9f;
+        border-radius:10px;
+        background-size:cover;
+        background-position:bottom;
+        background-repeat:no-repeat;
+    }
+    ul{
+        margin-left:-10px;
+    }
+    ul li::marker {
+        color: rgb(217, 131, 10);
+    }
+    .icon{
+        color:rgb(217, 131, 10); 
+        font-size:30px;
+        margin-right:8px;
+        padding:5px;
+        aspect-ratio:1;
+        background-color: rgba(235, 168, 107, 0.638);
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        
+    }
+
 </style>
 <script>
 function toggleMenu() {
   const m = document.getElementById("menu");
   m.style.display = m.style.display === "block" ? "none" : "block";
 }
+function syncHeight() {
+  const a = document.getElementById("frontend");
+  const b = document.getElementById("backend");
+  const c = document.getElementById("ml");
+
+  a.style.height = b.style.height = c.style.height = "auto";
+  //a.style.width = b.style.width = c.style.width = "auto";
+  //const maxW = Math.max(a.offsetWidth, b.offsetWidth, c.offsetWidth);
+  const maxH = Math.max(a.offsetHeight, b.offsetHeight, c.offsetHeight);
+  a.style.height = b.style.height = c.style.height = maxH + "px";
+  //a.style.width = b.style.width = c.style.width = maxW + "px";
+}
+
+window.addEventListener("load", syncHeight);
+window.addEventListener("resize", syncHeight);
 window.addEventListener("resize", () => {
   menu.style.display = "none";
 });
 </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-    <div style="position:fixed; top:0; height:9vh; left:0; right:0;background-color: #faf8f8d0;
-     border-bottom:1px solid rgba(195, 193, 193, 0.841);"  class="flex">
+<body style="margin:0;">
+    <div style="position:fixed; top:0; height:80px; left:0; right:0;background-color: #faf8f8f5;
+     border-bottom:1px solid rgba(195, 193, 193, 0.84);z-index:5;"  class="flex">
         <h2 style="flex: 1 1 30%; text-align:left;color:rgba(0, 0, 0, 0.814); ">Ananya's Portfolio</h2>
         <div style="flex: 1 1 40%; justify-content: right; margin-left:auto" class="flex gray1 nav">
             <label onclick="location.href='#about'">About</label>
@@ -112,6 +173,8 @@ window.addEventListener("resize", () => {
             <label onclick="location.href='#contact'">Contact</label>
         </div>
         <button class="menu-btn" onclick="toggleMenu()" >☰</button>
+    </div>
+    <div style="position:fixed; top:70px; height:80px; right:10px;">
         <div id="menu" class="menu">
             <label onclick="location.href='#about'">About</label>
             <label onclick="location.href='#skills'">Skills</label>
@@ -120,9 +183,10 @@ window.addEventListener("resize", () => {
         </div>
     </div>
     <div class="container" style="margin-top:150px">
-        <div style="border-radius: 30px; padding:20px;  
-            text-align: center;justify-content: center; font-size:larger;
-            background-color: rgba(214, 211, 211, 0.656); display:flex; align-items: center;">
+        <div style="border-radius: 30px; padding-left:15px;  padding-right:15px;  padding-top:10px; padding-bottom:10px; 
+            text-align: center;justify-content: center; font-size:large;
+             background-color: rgba(214, 211, 211, 0.656); 
+             display:flex; align-items: center;"> 
             Welcome to my Portfolio
         </div>
     </div>
@@ -131,7 +195,7 @@ window.addEventListener("resize", () => {
             Full-Stack Developer
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="margin-top:30px">
         <div style="color:rgb(217, 131, 10);
             text-align: center;justify-content: center; font-size:10vh; display:flex; align-items: center;">
             & Problem-Solver
@@ -146,24 +210,201 @@ window.addEventListener("resize", () => {
     </div>
 
     <div class="flex container" >
-        <label style="height:70px;   color: white ; background-color:rgb(228, 139, 13) ;
+        <label onclick="location.href='#projects'" style="height:70px;   color: white ; background-color:rgb(228, 139, 13) ;
             text-align: center;justify-content: center; border-radius:40px; padding-left:20px;padding-right:20px;
             font-size:3vh; display:flex; align-items: center;">
             View my work
         </label>
         <label style="height:70px;  color: black ; border: 1px solid rgba(195, 193, 193, 0.841) ;
             text-align: center;justify-content: center; border-radius:40px; padding-left:25px;padding-right:25px;
-            font-size:3vh; display:flex; align-items: center;">
+            font-size:3vh; display:flex; align-items: center;" onclick="location.href='#contact'">
             Get in touch
         </label>
     </div>
     
-    <h2 id="about" class="target" style="margin-top:10vh;color:rgb(217, 131, 10)">About</h2>
-    <div id="skills" class="target" style="margin-top:60vh;color:blue">skills</div>
-    <div id="projects" class="target" style="margin-top:110vh;color:blue">projects</div>
-    <div id="contact" class="target" style="margin-top:160vh;color:blue">contact</div>
-    <!--div id="target-section" style="margin-top: 8%;color:blue; z-index:10">
-        regular
-    </div-->
-    <!--margin-left: auto;-->
+    <div id="about" class="flex container target" style="margin-top:200px;padding-left:70px;padding-right:70px;gap:50px;">
+        <div style="border-radius:40px; border: 1px solid rgba(195, 193, 193, 0.841) ; max-width:700px;
+            flex: 1 1 500px ;overflow:hidden;background-color: #000;">
+            <img src="assets/about1.png" alt="about">
+        </div>
+        <div style="justify-content: top; display:flex; flex-direction:column;
+            align-items: left;flex: 1 1 500px ;padding-left:30px;padding-right:30px;">
+            <div style="color:rgb(228, 139, 13);font-size: 2.5vh;">
+                ABOUT ME
+            </div>
+            <div style="color:black;font-size:6vh;max-width:1000px;padding-top: 30px;">
+                Turning ideas into reality
+            </div>
+            <div style="font-size:2.8vh;max-width:1000px;padding-top: 30px; color:rgba(88, 87, 87, 0.827)">
+                I'm a developer interested in building things by understanding problems and how systems work. 
+                What started as curiosity about how things function has grown into regularly working through challenges and 
+                turning ideas into working code.
+                <br>
+                <br>
+                I focus on writing clear, logical solutions and learning modern tools as I go.
+                I also have a growing interest in AI and machine learning, 
+                with some hands-on experience exploring models, data, and practical use cases.
+                <br><br>
+                Outside of coding, I'm a math, physics, and electronics enthusiast driven by curiosity about underlying principles. 
+                Exploring these fields helps me develop clearer reasoning and a deeper approach to problem solving.
+            </div>
+        </div>
+    </div>
+    <div id="skills" class="flex container target" style="margin-top:200px;padding:100px;gap:50px; 
+        background-color: rgba(186, 184, 184, 0.16);">
+        <div style="justify-content: top; display:flex; flex-direction:column;
+            align-items: center;flex: 1 1 500px ;padding-left:30px;padding-right:30px;">
+            <div style="color:rgb(228, 139, 13);font-size: 2.5vh;">
+                SKILLS
+            </div>
+            <div style="color:black;font-size:6vh;max-width:1000px;padding-top: 30px;">
+                Skills & Technologies
+            </div>
+            <div style="font-size:2.8vh;max-width:1000px;padding-top: 30px; color:rgba(93, 91, 91, 0.762)">
+                A versatile toolkit built over hands-on experience with modern technologies.
+            </div>
+            <div class="container flex ">
+                <div id="backend" class="card">
+                    <div>Backend</div>
+                    <ul>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+                <div id="frontend" class="card">
+                    <div>Frontend</div>
+                    <ul>
+                        <li>HTML & CSS</li>
+                        <li>React</li>
+                        <li>VueJS</li>
+                    </ul>
+                </div>
+                <div id="ml" class="card">
+                    <div>Machine Learning & Data Science</div>
+                    <ul>
+                        <li>Scikit-learn</li>
+                        <li>PyTorch</li>
+                        <li>NumPy</li>
+                        <li>Pandas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="projects" class="flex container target" style="margin-top:100px;padding:100px;gap:50px;">
+        <div style="justify-content: top; display:flex; flex-direction:column;
+            align-items: center;flex: 1 1 500px ;padding-left:30px;padding-right:30px;">
+            <div style="color:rgb(228, 139, 13);font-size: 2.5vh;">
+                PORTFOLIO
+            </div>
+            <div style="color:black;font-size:6vh;max-width:1000px;padding-top: 30px;">
+                My Projects
+            </div>
+            <div style="font-size:2.8vh;max-width:1000px;padding-top: 30px; color:rgba(93, 91, 91, 0.762)">
+                A selection of my recent work. Each project represents a unique challenge and solution.
+            </div>
+            <div class="container flex ">
+                <div class="img" style="background-image:url('assets/notemaker1.png');height:500px; width:500px;
+                    flex: 1 1 600px; max-width:700px">
+                    <div style="background-color:white; top:65%; height:35%; position:relative; padding:20px;
+                    border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+                        <div style="font-size:3vh">Notemaker
+                        <a href="https://github.com/an-42-an/notemaker" class="icon" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <a href="https://an-42-an.github.io/notemaker/" class="icon" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        </div>
+                        <br>
+                        <div style="color:rgba(60, 58, 58, 0.893)">A simple web app for creating and organizing notes with text, markdown, MathJaX and images.</div>
+                    </div>
+                </div>
+                <div class="img" style="background-image:url('assets/3DXO.png');height:500px; width:500px;
+                    flex: 1 1 600px; max-width:700px">
+                    <div style="background-color:white; top:65%; height:35%; position:relative; padding:20px;
+                    border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+                        <div style="font-size:3vh">3D XO
+                        <a href="https://github.com/an-42-an/3d_v2" class="icon" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <a href="https://threed-v2.onrender.com/" class="icon" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        </div>
+                        <br>
+                        <div style="color:rgba(60, 58, 58, 0.893)">A 3D tic-tac-toe game built to explore game logic and spatial thinking.</div>
+                    </div>
+                </div>
+                <div class="img" style="background-image:url('assets/veh1.png');height:500px; width:500px;
+                    flex: 1 1 600px; max-width:700px">
+                    <div style="background-color:white; top:65%; height:35%; position:relative; padding:20px;
+                    border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;">
+                        <div style="font-size:3vh">Vehicle Parking App
+                        <a href="https://github.com/an-42-an/mad2" class="icon" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        </div>
+                        <br>
+                        <div style="color:rgba(60, 58, 58, 0.893)">An application for managing and tracking vehicle parking slots efficiently.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact" class="flex container target" style="margin-top:200px;padding:100px;gap:50px; 
+        background-color: rgba(186, 184, 184, 0.16);">
+        <div style="justify-content: top; display:flex; flex-direction:column;
+            align-items: left;flex: 1 1 500px ;padding-left:30px;padding-right:30px;">
+            <div style="color:rgb(228, 139, 13);font-size: 2.5vh;">
+                CONTACT
+            </div>
+            <div style="color:black;font-size:6vh;max-width:1000px;padding-top: 30px;margin-bottom:30px;">
+                Let's Work Together
+            </div>
+            <div class="flex">
+                <div>
+                    <div style="margin-top: 30px;font-size: larger;">
+                        <span class="icon">
+                        <i class="fa-solid fa-envelope"></i>
+                        </span>
+                        ananya.ananth42@gmail.com
+                    </div>
+
+                    <div style="margin-top: 30px; font-size: larger;">
+                        <span class="icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                        </span>
+                        Chennai, India
+                    </div>
+                </div>
+                <div>
+                    <div style="margin-top: 30px;font-size: larger;">
+                        <a href="https://github.com/an-42-an" class="icon" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        Github
+                    </div>
+
+                    <div style="margin-top: 30px; font-size: larger;">
+                        <a href="www.linkedin.com/in/ananya-ananth-3a3261329" class="icon" target="_blank">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        LinkedIn
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="flex: 1 1 200px;padding-top:0px;">
+            <div style="font-size: 4vh; margin:15px;">Ananya Ananth</div>
+            <div style="font-size: 2.5vh; margin:15px;">2nd Year, B.E. Computer Science and Engineering</div>
+            <div style="font-size: 2.5vh; margin:15px;">Easwari Engineering College</div>
+            <div style="font-size: 2.5vh; margin:15px;">Chennai</div>
+        </div>
+    </div>
+    
 </body>
