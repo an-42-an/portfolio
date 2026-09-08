@@ -1,0 +1,39 @@
+.div1{
+    padding:10px;
+}
+.card{
+    box-shadow: 0 4px 8px 0  #9f9f9f;
+    border-radius:10px;
+    background-color:#fff7f0;
+    padding:20px;
+    font-size:3vh;
+    width:100%;
+    max-width:400px;
+    flex: 1 1 300px;
+    z-index:1;
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+.skill-topic{
+    font-weight:500;
+}
+.tech {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: fit-content;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.tech i {
+    font-size: 25px;
+}

@@ -1,0 +1,93 @@
+.img {
+    box-shadow: 0 4px 8px 0 #9f9f9f;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    min-width: 0;
+    aspect-ratio: 1;
+    padding: 0;
+    position: relative;
+    flex: 1 1 400px;
+    max-width: 500px;
+    height: 100%; /* Add this */
+    display: flex; /* Add this */
+    flex-direction: column; /* Add this */
+    justify-content: flex-end; /* Add this */
+}
+
+.actual-image {
+    background-color: white;
+    height: 38%; /* Change from min-height to height */
+    width: 100%;
+    position: absolute;
+    bottom: 0; /* Change from top: 65% to bottom: 0 */
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0 4px 8px 0 #9f9f9f;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden; /* Add this to prevent text overflow */
+}
+
+.project {
+    position: relative;
+}
+
+.project::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+
+    padding: 7px 12px;
+    border-radius: 20px;
+
+    background: #26334a;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.project.niche {
+    --label: "NICHE";
+}
+
+.project.games {
+    --label: "GAMES";
+}
+
+.project.product {
+    --label: "PRODUCT";
+}
+
+.project.dl{
+    --label: "DEEP LEARNING"
+}
+
+.project::before {
+    content: var(--label);
+}
+.filter {
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid #c5ccdc;
+    background: rgba(255, 255, 255, 0.45);
+    color: #182238;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.filter:hover {
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.filter.active {
+    background: #111a2d;
+    color: white;
+    border-color: #111a2d;
+}
