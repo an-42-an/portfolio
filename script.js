@@ -12,6 +12,22 @@ function syncHeight() {
     const maxH = Math.max(a.offsetHeight, b.offsetHeight, c.offsetHeight);
     a.style.height = b.style.height = c.style.height = maxH + "px";
 }
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".filter").forEach(button => {
+        button.addEventListener("click", () => {
+            const filter = button.dataset.filter;
+            document.querySelectorAll(".filter")
+            .forEach(b => b.classList.remove("active"));
+            button.classList.add("active");
+            document.querySelectorAll(".project").forEach(project => {
+                project.style.display =
+                filter === "all" || project.classList.contains(filter)
+                ? ""
+                : "none";
+            });
+        });
+    });
+});
 window.addEventListener('load', function() {
     document.querySelectorAll('.img').forEach(img => {
         const overlay = img.lastElementChild;

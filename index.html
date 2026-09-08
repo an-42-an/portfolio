@@ -31,6 +31,11 @@
             <label onclick="location.href='#contact'">Contact</label>
         </div>
     </div>
+    <div class="bubbles">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     <div class="flex container" style="margin-top:10%; align-items:flex-start; ">
         <div class="left" >
             <div class="title">
@@ -40,7 +45,7 @@
                 I design and build scalable web applications and backend systems with a strong focus on performance, reliability, and practical engineering.
                 Where it adds value, I also integrate AI and machine learning capabilities to create smarter, more capable products.
             </div>
-            <div class="flex" style="margin-top:10%; justify-content:left;" >
+            <div class="flex container" style="margin-top:10%; justify-content:left;" >
                 <label onclick="location.href='#projects'" style="color: white ; background-color:rgb(228, 139, 13) ;
                     text-align: center;justify-content: center; border-radius:40px; padding:20px;
                     font-size:130%; display:flex; align-items: center;">
@@ -81,7 +86,8 @@
             <img src="assets/about1.png" alt="about">
         </div>
     </div>
-    <div id="projects" class="flex container target" style="margin-top:100px;gap:50px;">
+    <div id="projects" class="flex container target"
+    style="margin-top:100px;gap:50px; max-width:100vw;">
         <div style="display:flex; flex-direction:column;
             align-items: stretch;flex: 1 1 500px ;">
             <div class="container">
@@ -95,9 +101,16 @@
                 <div style="font-size:2.8vh;max-width:1000px;padding-top: 30px; color:rgba(93, 91, 91, 0.762); padding-bottom:20px;">
                     A selection of my recent work. Each project represents a unique challenge and solution.
                 </div>
+                <div style="margin-bottom:10px">
+                    <button class="filter active" data-filter="all">All</button>
+                    <button class="filter" data-filter="niche">Niche</button>
+                    <button class="filter" data-filter="games">Games</button>
+                    <button class="filter" data-filter="dl">Deep Learning</button>
+                    <button class="filter" data-filter="product">Product</button>
+                </div>
             </div>
             <div class="flex container project-parent">
-                <div class="img" style="background-image:url('assets/notemaker1.png');">
+                <div class="img project niche" style="background-image:url('assets/notemaker1.png');">
                     <div class="actual-image">
                         <div style="font-size:3vh">Notemaker
                         <a href="https://github.com/an-42-an/notemaker" class="icon" target="_blank">
@@ -109,10 +122,65 @@
                         </a>
                         </div>
                         <br>
-                        <div style="color:rgba(60, 58, 58, 0.893)">A text editor for creating and organizing structured knowledge with recursive topics and subtopics, supporting text, Markdown, MathJax, and images.</div>
+                        <div style="color:rgba(60, 58, 58, 0.893)">A text editor for organizing structured knowledge with recursive subtopics, supporting text, Markdown, MathJax, and images</div>
                     </div>
                 </div>
-                <div class="img" style="background-image:url('assets/3DXO.png'); ">
+                <div class="img project product" style="background-image:url('assets/publications.jpeg');">
+                    <!-- <div style="top:0%;height:65%;margin:0;"></div> -->
+                    <div class="actual-image">
+                        <div style="font-size:3vh">Faculty Publications Tracker
+                        </div>
+                        <br>
+                        <div style="color:rgba(60, 58, 58, 0.893)">An application that tracks journal publications of faculty in colleges</div>
+                    </div>
+                </div>
+                <div class="img project niche" style="background-image:url('assets/renderer.png');">
+                    <div class="actual-image">
+                        <div style="font-size:3vh">Higher-dimension visualizer
+                        <a href="https://github.com/an-42-an/higher-dimension-renderer" class="icon" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <a href="https://an-42-an.github.io/higher-dimension-renderer/" class="icon" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        </div>
+                        <br>
+                        <div style="color:rgba(60, 58, 58, 0.893)">A browser-based renderer for visualizing points, edges, and coordinate axes from arbitrary dimensions in 2D</div>
+                    </div>
+                </div>
+                <div class="img project dl" style="background-image:url('assets/audio-genre.png'); ">
+                    <!-- <div style="top:0%;height:65%;margin:0;"></div> -->
+                    <div class="actual-image">
+                        <div style="font-size:3vh">Audio Genre Classifier
+                        <a href="https://colab.research.google.com/drive/175muCb2yV3KxF4Vnd6mQxjqBpxFTjm3p?usp=sharing" class="icon" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <a href="https://huggingface.co/spaces/an42/genre_classification_ast" class="icon" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        </div>
+                        <br>
+                        <div style="color:rgba(60, 58, 58, 0.893)">An Audio model trained to classify noisy mashups into different song-genres</div>
+                    </div>
+                </div>
+                <div class="img project product" style="background-image:url('assets/veh1.png');">
+                    <!-- <div style="top:0%;height:65%;margin:0;"></div> -->
+                    <div class="actual-image">
+                        <div style="font-size:3vh">Vehicle Parking App
+                        <a href="https://github.com/an-42-an/mad2" class="icon" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1g8S8ECOYntxI_UsjtBnwdgF6sQ1jxr3r/view?usp=sharing" class="icon" target="_blank">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                        </div>
+                        <br>
+                        <div style="color:rgba(60, 58, 58, 0.893)">An application for managing and tracking vehicle parking slots efficiently</div>
+                    </div>
+                </div>
+                <div class="img project games" style="background-image:url('assets/3DXO.png'); ">
                     <!-- <div style="top:0%;height:65%;margin:0;"></div> -->
                     <div class="actual-image">
                         <div style="font-size:3vh">3D XO
@@ -125,19 +193,20 @@
                         </a>
                         </div>
                         <br>
-                        <div style="color:rgba(60, 58, 58, 0.893)">A 3D tic-tac-toe game built to explore game logic and spatial thinking.</div>
+                        <div style="color:rgba(60, 58, 58, 0.893)">A 3D tic-tac-toe game built to explore game logic and spatial thinking</div>
                     </div>
                 </div>
-                <div class="img" style="background-image:url('assets/veh1.png');">
+                <div class="img project dl" style="background-image:url('assets/audio-genre.png'); ">
                     <!-- <div style="top:0%;height:65%;margin:0;"></div> -->
                     <div class="actual-image">
-                        <div style="font-size:3vh">Vehicle Parking App
-                        <a href="https://github.com/an-42-an/mad2" class="icon" target="_blank">
+                        <div style="font-size:3vh">Comment Category Predictor
+                        <a href="https://colab.research.google.com/drive/1G-Wtqik_qWcYh_oDre8JoV4f7jm9dS3U?usp=sharing" class="icon" target="_blank">
                             <i class="fa-brands fa-github"></i>
                         </a>
+
                         </div>
                         <br>
-                        <div style="color:rgba(60, 58, 58, 0.893)">An application for managing and tracking vehicle parking slots efficiently.</div>
+                        <div style="color:rgba(60, 58, 58, 0.893)">A language model trained to categorize comments into normal, political, offensive and other categories</div>
                     </div>
                 </div>
             </div>
@@ -235,7 +304,7 @@
             </div>
         </div>
     </div>
-    <div id="contact" class="flex container target" style="margin-top:200px;gap:50px; padding-top:50px;padding-bottom:50px; max-width:99vw;
+    <div id="contact" class="flex container target" style="margin-top:200px;gap:50px; padding-top:50px;padding-bottom:50px; max-width:100vw;
         background-color: #ffefd4;">
         <div class="contact-container">
             <div class="topic">
@@ -244,7 +313,7 @@
             <div style="color:black;font-size:6vh;max-width:1000px;padding-top: 30px;margin-bottom:30px;">
                 Let's Work Together
             </div>
-            <div class="flex" style="padding-left: 0;padding-right: 0;">
+            <div class="flex contact-small-container" style="padding-left: 0;padding-right: 0;">
                 <div>
                     <div style="margin-top: 30px;font-size: larger; max-width:90vw;
                     overflow:hidden;">
